@@ -1,0 +1,102 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <title>Geverson Orçamentos</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Logomarca -->
+            <div class="logo-container">
+                <img src="logomarca.png" alt="Logomarca" class="logo">
+            </div>
+            <h1>Geverson Orçamentos</h1>
+            <p class="slogan">Transformando espaços em sonhos realizados</p>
+        </header>
+        
+        <!-- Resto do código HTML permanece o mesmo -->
+        
+        <!-- Informações do Orçamento -->
+<div class="info-box">
+    <div class="info-row">
+        <div class="info-column">
+            <label for="nome-cliente">Nome do Cliente:</label>
+            <input type="text" id="nome-cliente" placeholder="Digite o nome do cliente">
+        </div>
+        <div class="info-column">
+            <label for="data-orcamento">Data do Orçamento:</label>
+            <input type="date" id="data-orcamento">
+        </div>
+        <div class="info-column">
+            <label>Localização:</label>
+            <p id="localizacao-fixa"><strong>Sinop - MT</strong></p>
+        </div>
+    </div>
+</div>
+        
+        <!-- Seleção de Ambientes -->
+        <div class="ambiente-box">
+            <h3>Selecione o Ambiente</h3>
+            <input type="text" id="ambiente-busca" placeholder="Digite para buscar ambiente...">
+            <select id="ambiente-select">
+                <option value="">Selecione um ambiente</option>
+            </select>
+        </div>
+        
+        <!-- Lista de móveis -->
+        <div class="moveis-box" id="moveis-container" style="display: none;">
+            <h3>Móveis Disponíveis</h3>
+            <ul id="lista-moveis"></ul>
+        </div>
+        
+        <!-- Formulário para Orçamento -->
+        <div class="form-box" id="form-container" style="display: none;">
+            <h3>Adicionar ao Orçamento</h3>
+            <div id="form-campos">
+                <label>Móvel:</label>
+                <input type="text" id="descricao" readonly>
+                <label>Ambiente:</label>
+                <input type="text" id="ambiente-nome" readonly>
+                <label>Valor (R$):</label>
+                <input type="number" id="valor" step="0.01" min="0.01" placeholder="Digite o valor">
+                <label>Observações:</label>
+                <textarea id="observacoes" placeholder="Ex.: medidas, cor, etc."></textarea>
+                <button type="button" id="botao-adicionar">Adicionar ao Orçamento</button>
+            </div>
+        </div>
+        
+        <!-- Buscar no orçamento -->
+        <div class="busca-box">
+            <h3>Buscar no Orçamento</h3>
+            <input type="text" id="campo-busca" placeholder="Procure por móveis adicionados...">
+        </div>
+        
+        <!-- Lista de itens do orçamento -->
+        <div class="lista-box">
+            <h3>Itens do Orçamento</h3>
+            <ul id="lista-transacoes"></ul>
+        </div>
+
+        <!-- Valor Total do Orçamento -->
+        <div class="saldo-box">
+            <h2>Valor Total do Orçamento</h2>
+            <div id="saldo">R$ 0,00</div>
+        </div>
+
+        <!-- Botão para imprimir/baixar PDF -->
+        <div class="acoes-box">
+            <button id="botao-imprimir" class="botao-grande">
+                <span class="icone-imprimir">📄</span> Imprimir / Salvar PDF
+            </button>
+        </div>
+
+        <footer>
+            <p>&copy; Geverson Orçamentos - Todos os direitos reservados</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

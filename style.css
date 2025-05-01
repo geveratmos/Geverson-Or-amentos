@@ -1,0 +1,257 @@
+/* Estilo Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centralizar a página */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #000;
+    padding: 10px 0;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 10px 0 5px;
+}
+
+.slogan {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Blocos da página */
+.ambiente-box,
+.moveis-box,
+.form-box,
+.busca-box,
+.lista-box,
+.saldo-box,
+.info-box {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Títulos das Seções */
+h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Inputs e Botões */
+input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #2c82ba;
+}
+
+button[onclick^="removerItem"] {
+    background-color: #e74c3c;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+button[onclick^="removerItem"]:hover {
+    background-color: #c0392b;
+}
+
+/* Listas */
+.moveis-box ul,
+.lista-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.moveis-box li,
+.lista-box li {
+    margin-bottom: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Itens clicáveis */
+.moveis-box li {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.moveis-box li:hover {
+    background-color: #e2f4fb;
+}
+
+/* Saldo Total */
+.saldo-box {
+    text-align: center;
+    background-color: #eafaf1;
+    border: 1px solid #b8e6ce;
+}
+
+#saldo {
+    font-size: 24px;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Informações do orçamento */
+.info-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px;
+}
+
+.info-column {
+    flex: 1;
+    min-width: 250px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.info-column label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#localizacao-fixa {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Botão de impressão */
+.acoes-box {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.botao-grande {
+    background-color: #27ae60;
+    color: white;
+    font-size: 18px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-grande:hover {
+    background-color: #219653;
+}
+
+.icone-imprimir {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* Rodapé da página */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 30px;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+    .info-column {
+        flex: 0 0 100%;
+    }
+}
+
+/* Estilos para impressão */
+@media print {
+    body {
+        background-color: white;
+        font-size: 12pt;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+    }
+    
+    header, .ambiente-box, .moveis-box, .form-box, .busca-box, 
+    .acoes-box, footer, button[onclick^="removerItem"] {
+        display: none !important;
+    }
+    
+    .saldo-box, .lista-box {
+        page-break-inside: avoid;
+    }
+    
+    h3 {
+        border-bottom: 1px solid #333;
+        padding-bottom: 5px;
+    }
+}
